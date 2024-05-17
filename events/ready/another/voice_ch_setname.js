@@ -23,12 +23,13 @@ module.exports = async (client) => {
         const timeFormatter = await new Intl.DateTimeFormat("th-TH", timeOptions);
         const formattedDate = dateFormatter.format(now); // Format date
         const formattedTime = timeFormatter.format(now); // Format time
-        await client.channels.cache.get('1241015300376498298').setName(`updated : ${formattedTime}`)
         let onlineMembers = await guild.members.cache.filter(m => m.presence?.status === 'online').size;
         let dndMembers = await guild.members.cache.filter(m => m.presence?.status === 'dnd').size;
         let idleMembers = await guild.members.cache.filter(m => m.presence?.status === 'idle').size;
         let onlineMemberCount = await onlineMembers + dndMembers + idleMembers;
         await client.channels.cache.get('1241002501713694751').setName(`🟢 ${onlineMemberCount -3}`)
+        await client.channels.cache.get('1241015300376498298').setName(`updated : ${formattedTime}`)
+        console.log(`update vocie ch setname at ${formattedTime}`)
     },60000)
 
 }

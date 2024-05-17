@@ -1,6 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, Client, ContextMenuCommandInteraction, CommandInteraction, ActivityType } = require('discord.js');
 module.exports = async (client) => {
-    console.log(`${client.user.tag} is Ready`);
     const now = await new Date();
 
     // Specify date options for formatting
