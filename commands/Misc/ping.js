@@ -22,7 +22,7 @@ async function run({ interaction }) {
         const endTime = Date.now();
         const ping = endTime - startTime;
 
-        await interaction.editReply(`Bot's Ping in Thailand network: ${ping}ms`);
+        await interaction.editReply(`Ping : ${ping}ms`);
     } catch (error) {
         console.error('Error executing ping command:', error);
         await interaction.reply('There was an error while executing the ping command.');
