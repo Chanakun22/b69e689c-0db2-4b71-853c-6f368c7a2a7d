@@ -13,7 +13,6 @@ module.exports = async (client) => {
         const timeFormatter = await new Intl.DateTimeFormat('th-TH', timeOptions);
         const formattedDate = dateFormatter.format(now);
         const formattedTime = timeFormatter.format(now);
-
         if (oldState.channelId !== newState.channelId && oldState.channelId != null && newState.channelId != null) {
             const oldChannelName = oldState.channel ? oldState.channel.name : 'None';
             const newChannelName = newState.channel ? newState.channel.name : 'None';
@@ -24,7 +23,6 @@ module.exports = async (client) => {
                 .setDescription(`\`${newState.member.user.tag}\`|Switch to voice channel| \`${oldChannelName}\`➡️ \`${newChannelName}\``)
                 .setFooter({ text: `${formattedDate} | ${formattedTime}   • Created by _nv23` })
             channel.send({ embeds: [embed] });
-//console.log(`${newState.member.user.tag} moved from ${oldChannelName} to ${newChannelName}`);
         }
         else {
             if (oldState.channelId != null && newState.channelId == null) {
@@ -36,10 +34,8 @@ module.exports = async (client) => {
                     .setDescription(`\`${newState.member.user.tag}\` |Left from voice channel|➡️ \`${oldState.channel.name}\``)
                     .setFooter({ text: `${formattedDate} | ${formattedTime}   • Created by _nv23` })
                 channel.send({ embeds: [embed] });
-
             }
             if (oldState.channelId == null && newState.channelId != null) {
-
                 const icon_ = oldState.guild.members.cache.get(oldState.member.user.id);
                 const embed = new EmbedBuilder()
                     .setAuthor({ name: `${oldState.member.user.tag} | Join`, iconURL: icon_.user.displayAvatarURL() })
@@ -47,20 +43,7 @@ module.exports = async (client) => {
                     .setDescription(`\`${oldState.member.user.tag}\` |Join voice channel|➡️ \`${newState.channel.name}\``)
                     .setFooter({ text: `${formattedDate} | ${formattedTime} • Created by _nv23` })
                 channel.send({ embeds: [embed] });
-
             }
         }
-        // if (oldState.channel && !newState.channel) {
-        //     // Unmute the user if they were previously muted
-        //     if (oldState.member.voice.mute) {
-        //         oldState.member.voice.setMute(false)
-        //             .then(() => {
-        //                 console.log(`${oldState.member.user.tag} has left the voice channel and was unmuted.`);
-        //             })
-        //             .catch((error) => {
-        //                 console.error(`Error unmuting ${oldState.member.user.tag}: ${error.message}`);
-        //             });
-        //     }
-        // }
     })
 }
