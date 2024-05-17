@@ -11,7 +11,7 @@ module.exports = async (client) => {
     let idleMembers = await guild.members.cache.filter(m => m.presence?.status === 'idle').size;
     let onlineMemberCount = await onlineMembers + dndMembers + idleMembers;
     setInterval(async () => {
-        await client.channels.cache.get('1240992973316030514').setName(`📶 ${onlineMemberCount -3}`)
+        await client.channels.cache.get('1240992973316030514').setName(`🟢 ${onlineMemberCount -3}`)
     },60000)
 
 }
