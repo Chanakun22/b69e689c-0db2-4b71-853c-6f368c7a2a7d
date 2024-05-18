@@ -6,6 +6,7 @@ const { SlashCommandBuilder, EmbedBuilder, Client, ContextMenuCommandInteraction
  */
 module.exports = async (client) => {
     setInterval(async () => {
+        try{
         const now = await new Date();
         const dateOptions = {
             year: "numeric", // "numeric" for year (e.g., 2024)
@@ -26,6 +27,10 @@ module.exports = async (client) => {
         const ser = await server_status.json()
         var status = ser.online ? '🟢server-game-information' : '🔴server-game-information'
         await client.channels.cache.get('1238456510514728981').setName(`${status}`)
+    }
+    catch(error){
+        console.error(error)
+    }
     },60000)
 
 }
