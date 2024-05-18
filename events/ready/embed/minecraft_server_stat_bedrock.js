@@ -5,19 +5,11 @@ const { SlashCommandBuilder, EmbedBuilder, Client, ContextMenuCommandInteraction
 module.exports = async (client) => {
 
     const channel = await client.channels.cache.get('1230150236543127614');
-    // const deletemessage = await channel.messages.fetch({ limit: 2 });
-    // await deletemessage.forEach(async deletemessage => {
-    //     await deletemessage.delete();
-    // });
-
-
     const embed = new EmbedBuilder()
         .setTitle('Server Minecraft (BEDROCK) Information')
         .setColor('#ff0000')
         .setThumbnail('https://i.imgur.com/eBzBmxb.png')
-
     const message = await channel.send({ embeds: [embed] });
-    // const guild = client.guilds.cache.get('1169260319823106169');
     let ip = 'chanakun428.thddns.net:8000';
     let intervalId = setInterval(async () => {
         try {
@@ -82,7 +74,7 @@ module.exports = async (client) => {
             await message.edit({ embeds: [embed] });
         }
         catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }, 40000);
 

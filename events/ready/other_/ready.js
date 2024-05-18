@@ -22,15 +22,15 @@ module.exports = async (client, interaction) => {
 
   // ตั้งค่าสถานะของบอท
   client.user.setPresence({
-    activities: [{ name: 'Update status Server', type: ActivityType.Watching }],
-    status: 'online',
+    activities: [{ name: 'Codeing...', type: ActivityType.Watching }],
+    status: 'dnd',
   });
 
   // อัปเดตสถานะของบอททุก 10 นาที
   setInterval(() => {
     client.user.setPresence({
-      activities: [{ name: 'Update status Server', type: ActivityType.Watching }],
-      status: 'online',
+      activities: [{ name: 'Codeing...', type: ActivityType.Watching }],
+      status: 'dnd',
     });
   }, 600000); // 600000 milliseconds = 10 minutes
 };

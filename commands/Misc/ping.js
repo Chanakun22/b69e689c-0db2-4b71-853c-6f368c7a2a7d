@@ -3,7 +3,7 @@ const { SlashCommandAssertions, ContextMenuCommandAssertions, ContextMenuCommand
 
 
 const data = new SlashCommandBuilder()
-    .setName('ping')
+    .setName('pingg')
     .setDescription('find from thsi list')
 
 async function run({ interaction }) {

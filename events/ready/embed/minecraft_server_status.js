@@ -86,7 +86,7 @@ module.exports = async (client) => {
             await message.edit({ embeds: [embed] });
         }
         catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }, 40000);
 
