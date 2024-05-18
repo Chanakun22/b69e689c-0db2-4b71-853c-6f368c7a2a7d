@@ -16,11 +16,8 @@ module.exports = async (client) => {
         second: '2-digit',  // "2-digit" for zero-padded second (e.g., 00, 01, ..., 59)
         hour12: false       // Use 24-hour format (e.g., 13:00 instead of 1:00 PM)
     };
-
-    // Format the date and time separately
     const dateFormatter = await new Intl.DateTimeFormat('th-TH', dateOptions);
     const timeFormatter = await new Intl.DateTimeFormat('th-TH', timeOptions);
-
     const formattedDate = dateFormatter.format(now); // Format date
     const formattedTime = timeFormatter.format(now); // Format time
     const embed = new EmbedBuilder()
