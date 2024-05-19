@@ -10,6 +10,7 @@ module.exports = async (client) => {
         .setColor('#ff0000')
         .setThumbnail('https://i.imgur.com/eBzBmxb.png')
     const message = await channel.send({ embeds: [embed] });
+    
     let ip = 'chanakun428.thddns.net:8000';
     let intervalId = setInterval(async () => {
         try {

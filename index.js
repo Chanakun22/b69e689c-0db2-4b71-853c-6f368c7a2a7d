@@ -5,8 +5,6 @@ const { type } = require('os');
 const pets = require('./commands/data/pets.json')
 
 
-
-
 require("dotenv").config()
 
 const client = new Client({
@@ -29,6 +27,8 @@ new CommandKit({
     bulkRegister: true,
 
 });
+
+
 
 
 client.login(process.env.token)
