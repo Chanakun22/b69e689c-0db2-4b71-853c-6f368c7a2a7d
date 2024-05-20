@@ -56,5 +56,5 @@ module.exports = async (client, interaction) => {
       activities: [{ name: `Time: ${formattedTime}`, type: ActivityType.Watching }],
       status: 'dnd',
     });
-  },5000); 
+  },3000); 
 };

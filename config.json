@@ -1,8 +1,10 @@
 {
-    "TOKEN": "",
-    "COOLDOWN_PER_USER": 7500,
-    "MAX_LINKS_PER_MESSAGE": 5,
-    "YT_DLP_PATH": "yt-dlp",
-    "EMBED_TWITTER_VIDEO": false,
-    "BOOSTED_CHANNEL_ID": ""
+    "token": "your-discord-bot-token-here",
+    "message": "วิดีโอใหม่: **{videoTitle}**! อัปเดตโดย {videoAuthorName} เวลา {videoPubDate}! link: {videoURL}",
+    "channel": "1241737065981415519",
+    "youtubers": [
+        "BABYMONSTER",
+        "YG ENTERTAINMENT"
+    ],
+    "youtubeKey": "AIzaSyCQGCyW78AoqhqLh0dEcPh5q4iUvJy9Hxs"
 }

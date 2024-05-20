@@ -28,8 +28,5 @@ new CommandKit({
 
 });
 
-
-
-
 client.login(process.env.token)
 
